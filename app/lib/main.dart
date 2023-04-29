@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
+import 'LoginPage.dart';
  void main() {
   runApp(MyApp());
 }
@@ -7,9 +7,9 @@ import 'login.dart';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My App',
+      title: '9 Store',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: LoginPage(),

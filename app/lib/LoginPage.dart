@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
+import 'HomePage.dart';
 
  class LoginPage extends StatefulWidget {
   @override
@@ -16,7 +16,7 @@ import 'home_screen.dart';
      if (isValidUser) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen()),
+        MaterialPageRoute(builder: (context) => HomePage()),
       );
     } else {
       showDialog(
