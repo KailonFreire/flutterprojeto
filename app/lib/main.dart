@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'LoginPage.dart';
+import 'Login.dart';
+import 'registrar.dart';
  void main() {
   runApp(MyApp());
 }
@@ -12,7 +13,7 @@ import 'LoginPage.dart';
         primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginPage(),
+      home: Register(),
     );
   }
 }
