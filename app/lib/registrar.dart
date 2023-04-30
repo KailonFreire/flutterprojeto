@@ -11,19 +11,22 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  Login login = Login();
   String emailErrorText = '';
   String passwordErrorText = '';
 
   void _registerUser() {
+    Login login = Login();
     String email = emailController.text;
     String password = passwordController.text;
-     setState(() {
+
+    setState(() {
       emailErrorText = '';
       passwordErrorText = '';
     });
-     if (email.length >= 3 && password.length >= 6) {
+
+    if (email.length >= 3 && password.length >= 6) {
       login.addLogin(context, email, password);
+      
       if (login.validaUsuario(email, password)) {
         Navigator.pushReplacement(
           context,

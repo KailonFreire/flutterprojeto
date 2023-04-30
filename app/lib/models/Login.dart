@@ -11,7 +11,7 @@ class Login{
 
   static Map<String, String>  usuarios = new HashMap();  
   
-   void addLogin(BuildContext context, String email, String senha) {
+  void addLogin(BuildContext context, String email, String senha) {
     if (usuarios.containsKey(email)) {
       showDialog(
         context: context,
@@ -26,7 +26,8 @@ class Login{
           ],
         ),
       );
-    } else {
+    } 
+    else {
       usuarios[email] = _hashSenha(senha);
       showDialog(
         context: context,
