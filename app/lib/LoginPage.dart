@@ -1,8 +1,7 @@
 import 'package:app/registrar.dart';
 import 'package:flutter/material.dart'; 
 import 'HomePage.dart'; 
-import 'Login.dart'; 
-
+import 'models/Login.dart'; 
  
 class LoginPage extends StatefulWidget { 
   @override 
@@ -23,12 +22,13 @@ class _LoginPageState extends State<LoginPage> {
         context, 
         MaterialPageRoute(builder: (context) => HomePage()), 
       ); 
-    } else { 
+    } 
+    else { 
       showDialog( 
         context: context, 
         builder: (context) => AlertDialog( 
-          title: Text('Invalid User'), 
-          content: Text('Please enter a valid username and password.'), 
+          title: Text('Usuário inválido'), 
+          content: Text('Por favor, entre um nome de usuário e senha válido.'), 
           actions: [ 
             TextButton( 
               child: Text('OK'), 
@@ -59,13 +59,13 @@ class _LoginPageState extends State<LoginPage> {
               TextField( 
                 controller: usernameController, 
                 decoration: InputDecoration( 
-                  labelText: 'Username', 
+                  labelText: 'Usuário', 
                 ), 
               ), 
               TextField( 
                 controller: passwordController, 
                 decoration: InputDecoration( 
-                  labelText: 'Password', 
+                  labelText: 'Senha', 
                 ), 
                 obscureText: true, 
               ), 
@@ -77,8 +77,8 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 16.0), 
               TextButton( 
                 child: const Text(
-                  'Don\'t have an account? Register' 
-                style: TextStyle(
+                  'Não tem conta? Registrar',
+                  style: TextStyle(
                     color: Colors.blue,
                     decoration: TextDecoration.underline,
                   ),
