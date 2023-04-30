@@ -63,10 +63,10 @@ import 'Login.dart';
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Register'),
+        title: const Text('Register'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding:const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -119,7 +119,7 @@ import 'Login.dart';
                 errorText: passwordErrorText.isEmpty ? null : passwordErrorText,
                 errorBorder: passwordErrorText.isEmpty
                     ? null
-                    : OutlineInputBorder(
+                    : const OutlineInputBorder(
                         borderSide: BorderSide(
                           color: Colors.red,
                         ),
