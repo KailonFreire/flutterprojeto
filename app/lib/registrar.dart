@@ -25,10 +25,10 @@ class _RegisterState extends State<Register> {
      if (email.length >= 3 && password.length >= 6) {
       login.addLogin(context, email, password);
       if (login.validaUsuario(email, password)) {
-        // Navigator.pushReplacement(
-        //   context,
-        //   MaterialPageRoute(builder: (context) => HomePage()),
-        // );
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => HomePage()),
+        );
       }
     } 
     else {
