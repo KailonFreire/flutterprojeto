@@ -1,19 +1,21 @@
 import 'package:app/HomePage.dart';
 import 'package:app/LoginPage.dart';
 import 'package:flutter/material.dart';
-import 'Login.dart';
- class Register extends StatefulWidget {
+import 'models/Login.dart';
+
+class Register extends StatefulWidget {
   @override
   _RegisterState createState() => _RegisterState();
 }
- class _RegisterState extends State<Register> {
+
+class _RegisterState extends State<Register> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   Login login = Login();
   String emailErrorText = '';
   String passwordErrorText = '';
 
-   void _registerUser() {
+  void _registerUser() {
     String email = emailController.text;
     String password = passwordController.text;
      setState(() {
@@ -28,24 +30,27 @@ import 'Login.dart';
         //   MaterialPageRoute(builder: (context) => HomePage()),
         // );
       }
-    } else {
+    } 
+    else {
       if (email.length < 3) {
         setState(() {
-          emailErrorText = 'Email should have at least 3 characters.';
+          emailErrorText = 'O e-mail precisa ter no mínimo 3 caracteres.';
         });
       }
+
       if (password.length < 6) {
         setState(() {
-          passwordErrorText = 'Password should have at least 6 characters.';
+          passwordErrorText = 'A senha precisa ter no mínimo 6 caracteres.';
         });
       }
-       showDialog(
+
+      showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('Invalid registration'),
+            title: Text('Erro ao registar'),
             content: Text(
-                'Please enter a valid email with at least 3 characters and a valid password with at least 6 characters.'),
+                'Por favor entre um e-mail com no mínimo 3 caracteres e uma senha com pelo menos 6 caracteres.'),
             actions: [
               TextButton(
                 onPressed: () {
@@ -59,11 +64,12 @@ import 'Login.dart';
       );
     }
   }
-   @override
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Register'),
+        title: Text('Registrar'),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
@@ -73,7 +79,7 @@ import 'Login.dart';
             TextField(
               controller: emailController,
               decoration: InputDecoration(
-                hintText: 'Enter your email',
+                hintText: 'Informe seu e-mail',
                 errorText: emailErrorText.isEmpty ? null : emailErrorText,
                 errorBorder: emailErrorText.isEmpty
                     ? null
@@ -101,7 +107,7 @@ import 'Login.dart';
               onChanged: (value) {
                 if (value.length < 3) {
                   setState(() {
-                    emailErrorText = 'Email should have at least 3 characters.';
+                    emailErrorText = 'E-mail precisa ter no mínimo 3 caracteres.';
                   });
                 } else {
                   setState(() {
@@ -115,7 +121,7 @@ import 'Login.dart';
               controller: passwordController,
               obscureText: true,
               decoration: InputDecoration(
-                hintText: 'Enter your password',
+                hintText: 'Informe sua senha',
                 errorText: passwordErrorText.isEmpty ? null : passwordErrorText,
                 errorBorder: passwordErrorText.isEmpty
                     ? null
@@ -143,7 +149,7 @@ import 'Login.dart';
               onChanged: (value) {
                 if (value.length < 6) {
                   setState(() {
-                    passwordErrorText = 'Password should have at least 6 characters.';
+                    passwordErrorText = 'A senha precisa ter no mínimo 6 caracteres.';
                   });
                 } else {
                   setState(() {
@@ -155,7 +161,7 @@ import 'Login.dart';
             SizedBox(height: 12.0),
             ElevatedButton(
               onPressed: _registerUser,
-              child: Text('Register'),
+              child: Text('Registrar'),
             ),
             SizedBox(height: 12.0),
             Padding(
@@ -168,7 +174,7 @@ import 'Login.dart';
                   );
                 },
                 child: const Text(
-                  'Already have an account? Log in now!',
+                  'Já possui uma conta? Entrar',
                   style: TextStyle(
                     color: Colors.blue,
                     decoration: TextDecoration.underline,
