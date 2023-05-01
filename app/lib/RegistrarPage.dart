@@ -22,9 +22,12 @@ class _RegisterState extends State<Register> {
 
     if (emailErrorText == '' && passwordErrorText == '') {
       login.addLogin(context, email, password);
-        setState(() {
+      
+      setState(() {
         emailErrorText = '';
         passwordErrorText = '';
+        emailController.text = '';
+        passwordController.text = '';
       });
       
       if (login.validaUsuario(email, password)) {

@@ -1,3 +1,4 @@
+import 'package:app/RegistrarPage.dart';
 import 'package:flutter/material.dart';
 import 'ClientesPage.dart';
 import 'ProdutosPage.dart';
@@ -9,7 +10,20 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Gestão'),
-        backgroundColor: Colors.green
+        backgroundColor: Colors.green,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Register()),
+            );
+          }, 
+          icon: const Icon(
+            Icons.arrow_back,
+            size: 30
+          )
+        )
       ),
       body: Center(
         child: Column(

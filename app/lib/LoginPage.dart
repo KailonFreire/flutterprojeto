@@ -1,4 +1,4 @@
-import 'package:app/registrar.dart';
+import 'package:app/RegistrarPage.dart';
 import 'package:flutter/material.dart'; 
 import 'HomePage.dart'; 
 import 'models/Login.dart'; 
