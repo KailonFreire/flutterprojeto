@@ -16,7 +16,7 @@ class _ProdutosPageState extends State<ProdutosPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Produtos'),
+        title: const Text('Produtos'),
         backgroundColor: Colors.green
       ),
       body: Padding(
@@ -42,7 +42,7 @@ class _ProdutosPageState extends State<ProdutosPage> {
           children: [
             TextFormField(
               controller: _nomeController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Nome',
                 border: OutlineInputBorder()
               ),
@@ -61,8 +61,12 @@ class _ProdutosPageState extends State<ProdutosPage> {
                 border: OutlineInputBorder()
               ),
               validator: (value) {
-                if(value == null || value.isEmpty) {
-                  return 'Informe o preço do produto';
+                if (value == null || value.isEmpty) {
+                  return 'Informe o preço do produto.';
+                }
+                double? preco = double.tryParse(value);
+                if (preco == null) {
+                  return 'Preço inválido, digite apenas numéros.';
                 }
                 return null;
               },
@@ -73,7 +77,7 @@ class _ProdutosPageState extends State<ProdutosPage> {
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
               ),
-              child: Text('Cadastrar'),
+              child: const Text('Cadastrar'),
             ),
           ],
         )

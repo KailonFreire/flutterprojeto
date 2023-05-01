@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Gestão da Loja',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
@@ -41,13 +41,13 @@ class HomePage extends StatelessWidget {
                                   builder: (context) => ProdutosPage()),
                             );
                           },
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.shopping_bag_rounded,
                             size: 30,
                           ),
                         ),
                       ),
-                      Center(
+                      const Center(
                         child: Text(
                           'Produtos',
                           style: TextStyle(
@@ -67,13 +67,13 @@ class HomePage extends StatelessWidget {
                                   builder: (context) => ClientesPage()),
                             );
                           },
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.people_alt_rounded,
                             size: 30,
                           ),
                         )
                       ),
-                      Center(
+                      const Center(
                         child: Text(
                           'Clientes',
                           style: TextStyle(

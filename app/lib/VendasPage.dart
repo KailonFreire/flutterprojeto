@@ -15,7 +15,7 @@ class _VendasPageState extends State<VendasPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Vendas"),
+        title: const Text("Vendas"),
         backgroundColor: Colors.green
       ),
       body: _listaVendas(),
@@ -25,7 +25,7 @@ class _VendasPageState extends State<VendasPage> {
         onPressed: () {
           _cadastroModal(context);
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -39,7 +39,7 @@ class _VendasPageState extends State<VendasPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Cadastrar Nova Venda"),
+          title: const Text("Cadastrar Nova Venda"),
           content: SingleChildScrollView(
             child: Form(
               key: _formularioKey,
@@ -48,7 +48,7 @@ class _VendasPageState extends State<VendasPage> {
                 children: [
                   TextFormField(
                     controller: _produtoController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'ID do Produto',
                       border: OutlineInputBorder() 
                     ),
@@ -62,7 +62,7 @@ class _VendasPageState extends State<VendasPage> {
                   SizedBox(height: 16.0),
                   TextFormField(
                     controller: _clienteController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'ID do Cliente',
                       border: OutlineInputBorder()
                     ),
@@ -76,7 +76,7 @@ class _VendasPageState extends State<VendasPage> {
                   SizedBox(height: 16.0),
                   TextFormField(
                     controller: _quantidadeController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Quantidade',
                       border: OutlineInputBorder()
                     ),
@@ -99,7 +99,7 @@ class _VendasPageState extends State<VendasPage> {
               style: ButtonStyle(
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.grey)
               ),
-              child: Text("Cancelar"),
+              child: const Text("Cancelar"),
             ),
             TextButton(
               onPressed: () {
@@ -117,7 +117,7 @@ class _VendasPageState extends State<VendasPage> {
                 }
                 else {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
+                    const SnackBar(
                       content: Text("O cadastro possui inconsitência."),
                       duration: Duration(seconds: 2)
                     )
@@ -128,7 +128,7 @@ class _VendasPageState extends State<VendasPage> {
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
               ),
-              child: Text("Cadastrar"),
+              child: const Text("Cadastrar"),
             ),
           ],
         );

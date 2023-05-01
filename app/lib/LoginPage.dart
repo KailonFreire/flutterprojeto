@@ -27,11 +27,11 @@ class _LoginPageState extends State<LoginPage> {
       showDialog( 
         context: context, 
         builder: (context) => AlertDialog( 
-          title: Text('Usuário inválido'), 
-          content: Text('Por favor, entre um nome de usuário e senha válido.'), 
+          title: const Text('Usuário inválido'), 
+          content: const Text('Por favor, insira um nome de usuário e senha válido.'), 
           actions: [ 
             TextButton( 
-              child: Text('OK'), 
+              child: const Text('OK'), 
               onPressed: () => Navigator.pop(context), 
             ) 
           ], 
@@ -58,20 +58,20 @@ class _LoginPageState extends State<LoginPage> {
             children: [ 
               TextField( 
                 controller: usernameController, 
-                decoration: InputDecoration( 
+                decoration: const InputDecoration( 
                   labelText: 'Usuário', 
                 ), 
               ), 
               TextField( 
                 controller: passwordController, 
-                decoration: InputDecoration( 
+                decoration: const InputDecoration( 
                   labelText: 'Senha', 
                 ), 
                 obscureText: true, 
               ), 
               SizedBox(height: 16.0), 
               ElevatedButton( 
-                child: Text('Login'), 
+                child: const Text('Login'), 
                 onPressed: _validateUser, 
               ), 
               SizedBox(height: 16.0), 

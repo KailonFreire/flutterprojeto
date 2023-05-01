@@ -16,11 +16,11 @@ class Login{
       showDialog(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-          title: Text('E-mail já existe'),
+          title: const Text('E-mail já existe'),
           content: Text('$email já foi registrado.'),
           actions: <Widget>[
             TextButton(
-              child: Text('OK'),
+              child: const Text('OK'),
               onPressed: () => Navigator.pop(context),
             ),
           ],
@@ -32,11 +32,11 @@ class Login{
       showDialog(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-          title: Text('Sucesso'),
-          content: Text('Conta registrada com sucesso.'),
+          title: const Text('Sucesso'),
+          content: const Text('Conta registrada com sucesso.'),
           actions: <Widget>[
             TextButton(
-              child: Text('OK'),
+              child: const Text('OK'),
               onPressed: () => Navigator.pop(context),
             ),
           ],

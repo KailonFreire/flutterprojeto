@@ -17,7 +17,7 @@ class _ClientesPageState extends State<ClientesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Clientes'),
+        title: const Text('Clientes'),
         backgroundColor: Colors.green
       ),
       body: Padding(
@@ -43,7 +43,7 @@ class _ClientesPageState extends State<ClientesPage> {
           children: [
             TextFormField(
               controller: _nomeController,
-              decoration: InputDecoration(
+              decoration:const InputDecoration(
                 labelText: 'Nome',
                 border: OutlineInputBorder(),
               ),
@@ -57,7 +57,7 @@ class _ClientesPageState extends State<ClientesPage> {
             SizedBox(height: 16.0),
             TextFormField(
               controller: _emailController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Email',
                 border: OutlineInputBorder(),
               ),
@@ -71,7 +71,7 @@ class _ClientesPageState extends State<ClientesPage> {
             SizedBox(height: 16.0),
             TextFormField(
               controller: _enderecoController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Endereço',
                 border: OutlineInputBorder(),
               ),
@@ -88,7 +88,7 @@ class _ClientesPageState extends State<ClientesPage> {
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
               ),
-              child: Text('Cadastrar'),
+              child: const Text('Cadastrar'),
             ),
           ],
         ),
